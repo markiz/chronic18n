@@ -7,6 +7,7 @@ module Chronic18n
   class UnknownLanguage < StandardError;  end
 
   class Translator
+    DELIMITER = /[\s,]/
 
     def initialize(txt, lang)
       @txt, @lang = txt, lang.to_s
@@ -23,7 +24,7 @@ module Chronic18n
       end
 
       # Match translate
-      @txt.split(/\s/).map { |w| dic[w] || w }.join(" ")
+      @txt.split(DELIMITER).map { |w| dic[w] || w }.join(" ")
     end
 
   end

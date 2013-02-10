@@ -15,8 +15,8 @@ module Chronic18n
   #
   #  Chronic18n.parse("today")
   #
-  def self.parse(txt, lang = "en")
-    Chronic.parse(lang.to_s != "en" ? Translator.new(txt, lang).work : txt)
+  def self.parse(txt, lang = "en", opts = {})
+    Chronic.parse(lang.to_s != "en" ? Translator.new(txt, lang).work : txt, opts)
   end
 
 end

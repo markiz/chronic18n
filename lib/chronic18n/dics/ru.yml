@@ -177,6 +177,18 @@ ru:
   окт: october
   ноя: november
   дек: december
+  'янв.': january
+  'фев.': february
+  'мар.': march
+  'апр.': april
+  'май.': may
+  'июн.': june
+  'июл.': july
+  'авг.': august
+  'сен.': september
+  'окт.': october
+  'ноя.': november
+  'дек.': december
 
   # Season
   лето: summer

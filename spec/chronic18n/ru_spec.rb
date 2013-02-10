@@ -41,6 +41,10 @@ describe "Portuguese" do
     Chronic18n.parse("3 мая", :ru).month.should eql(5)
   end
 
+  it "should parse contracted months" do
+    Chronic18n.parse("1 фев. 2012", :ru).month.should eql(2)
+  end
+
   it "should parse next month" do
     Chronic18n.parse("следующего месяца", :ru).month.should eql((Time.now.month + 1 % 12))
   end
@@ -81,5 +85,4 @@ describe "Portuguese" do
     date.hour.should == 17
     date.min.should == 48
   end
-
 end

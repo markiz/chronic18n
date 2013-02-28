@@ -61,10 +61,6 @@ describe "Portuguese" do
     Chronic18n.parse("сегодня в 9", :ru).day.should eql(Time.now.day)
   end
 
-  it "should parse today at" do
-    Chronic18n.parse("в 9", :ru).day.should eql(Time.now.day)
-  end
-
   it "should parse now" do
     Chronic18n.parse("сейчас", :ru).day.should eql(Time.now.day)
   end
@@ -84,5 +80,14 @@ describe "Portuguese" do
     date.year.should == 2011
     date.hour.should == 17
     date.min.should == 48
+  end
+
+  it "should understand prepositions" do
+    date = Chronic18n.parse("сегодня в 15:43", :ru)
+    date.day.should == Time.now.day
+    date.month.should == Time.now.month
+    date.year.should == Time.now.year
+    date.hour.should == 15
+    date.min.should == 43
   end
 end

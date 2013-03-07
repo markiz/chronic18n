@@ -90,4 +90,9 @@ describe "Portuguese" do
     date.hour.should == 15
     date.min.should == 43
   end
+
+  it "should understand relative time" do
+    date = Chronic18n.parse("9 минут назад", :ru)
+    date.min.should == (Time.now - 60*9).min
+  end
 end

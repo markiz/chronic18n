@@ -8,7 +8,7 @@ def get_time(t)
   Time.at(Time.now + t)
 end
 
-describe "Portuguese" do
+describe "Russian" do
 
   it "should parse something" do
     Chronic18n.parse("воскресенье", :ru).should be_a Time

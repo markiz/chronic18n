@@ -1,3 +1,5 @@
+require 'unicode'
+
 module Chronic18n
 
   DICS = Dir[File.join(File.dirname(__FILE__), 'dics', '') + "*.yml"].reduce({}) do |h,y|
@@ -10,7 +12,7 @@ module Chronic18n
     DELIMITER = /[\s,]/
 
     def initialize(txt, lang)
-      @txt, @lang = txt, lang.to_s
+      @txt, @lang = Unicode.downcase(txt), lang.to_s
     end
 
     def work

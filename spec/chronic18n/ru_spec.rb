@@ -73,6 +73,10 @@ describe "Russian" do
     Chronic18n.parse("вчера, 15:43", :ru).day.should eql(get_time(-1 * DAYS).day)
   end
 
+  it "downcases the input" do
+    Chronic18n.parse("Сегодня, 00:01", :ru).day.should eql(Time.now.day)
+  end
+
   it "should parse some real life examples" do
     date = Chronic18n.parse("16 марта 2011 года в 17:48", :ru)
     date.day.should == 16
